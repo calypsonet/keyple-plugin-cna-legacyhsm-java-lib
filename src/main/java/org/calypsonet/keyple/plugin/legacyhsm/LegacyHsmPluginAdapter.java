@@ -29,13 +29,13 @@ import java.util.concurrent.ConcurrentSkipListSet;
 import org.eclipse.keyple.core.plugin.PluginIOException;
 import org.eclipse.keyple.core.plugin.ReaderIOException;
 import org.eclipse.keyple.core.plugin.spi.PoolPluginSpi;
+import org.eclipse.keyple.core.plugin.spi.reader.PoolReaderSpi;
 import org.eclipse.keyple.core.plugin.spi.reader.ReaderSpi;
 import org.eclipse.keyple.core.util.HexUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 
  * Legacy HSM plugin extension adapter.
  *
  * @since 1.0.0
@@ -49,7 +49,6 @@ final class LegacyHsmPluginAdapter implements LegacyHsmPlugin, PoolPluginSpi {
       Collections.synchronizedMap(new HashMap<Integer, List<Csm>>());
 
   /**
-   * 
    * Do the initialization of the plugin.
    *
    * <p>It initializes the {@link CsmSystem} and get all necessary information from the available
@@ -224,7 +223,7 @@ final class LegacyHsmPluginAdapter implements LegacyHsmPlugin, PoolPluginSpi {
    * @since 1.0.0
    */
   @Override
-  public ReaderSpi allocateReader(String readerGroupReference) throws PluginIOException {
+  public PoolReaderSpi allocateReader(String readerGroupReference) throws PluginIOException {
 
     if (logger.isTraceEnabled()) {
       logger.trace("Reader allocation requested. GROUP_REFERENCE = {}", readerGroupReference);
