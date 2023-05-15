@@ -254,6 +254,9 @@ final class LegacyHsmReaderAdapter implements LegacyHsmReader, PoolReaderSpi {
   /**
    * {@inheritDoc}
    *
+   * <p>Note: being agnostic to the type of card extension used by the ticketing layer, it is here
+   * not possible to automatically select the card when allocating the reader.
+   *
    * @since 1.0.1
    */
   @Override
