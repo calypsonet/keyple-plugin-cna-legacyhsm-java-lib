@@ -17,7 +17,6 @@ import org.eclipse.keyple.core.plugin.spi.PoolPluginFactorySpi;
 import org.eclipse.keyple.core.plugin.spi.PoolPluginSpi;
 
 /**
- * 
  * Legacy HSM plugin factory extension adapter.
  *
  * @since 1.0.0
@@ -25,7 +24,6 @@ import org.eclipse.keyple.core.plugin.spi.PoolPluginSpi;
 final class LegacyHsmPluginFactoryAdapter implements LegacyHsmPluginFactory, PoolPluginFactorySpi {
 
   /**
-   * 
    * The unique name of the plugin.
    *
    * @since 1.0.0

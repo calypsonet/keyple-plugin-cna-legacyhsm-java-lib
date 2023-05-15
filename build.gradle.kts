@@ -31,7 +31,7 @@ repositories {
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("org.eclipse.keyple:keyple-common-java-api:2.0.0")
-    implementation("org.eclipse.keyple:keyple-plugin-java-api:2.0.0")
+    implementation("org.eclipse.keyple:keyple-plugin-java-api:2.1.0")
     implementation("org.eclipse.keyple:keyple-util-java-lib:2.3.0")
     implementation("org.slf4j:slf4j-api:1.7.32")
     testImplementation("junit:junit:4.13.2")

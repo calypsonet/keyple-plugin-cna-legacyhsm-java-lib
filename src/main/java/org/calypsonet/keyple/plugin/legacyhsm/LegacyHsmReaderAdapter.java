@@ -16,18 +16,17 @@ import com.spirtech.csm.CsmException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.eclipse.keyple.core.plugin.ReaderIOException;
-import org.eclipse.keyple.core.plugin.spi.reader.ReaderSpi;
+import org.eclipse.keyple.core.plugin.spi.reader.PoolReaderSpi;
 import org.eclipse.keyple.core.util.HexUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 
  * Legacy HSM reader extension adapter.
  *
  * @since 1.0.0
  */
-final class LegacyHsmReaderAdapter implements LegacyHsmReader, ReaderSpi {
+final class LegacyHsmReaderAdapter implements LegacyHsmReader, PoolReaderSpi {
 
   private static final Logger logger = LoggerFactory.getLogger(LegacyHsmReaderAdapter.class);
 
@@ -72,7 +71,6 @@ final class LegacyHsmReaderAdapter implements LegacyHsmReader, ReaderSpi {
   };
 
   /**
-   * 
    * This constructor should only be called by allocateReader from {@link LegacyHsmPluginAdapter}
    *
    * @param csmChannel the {@link CsmChannel}
@@ -109,7 +107,6 @@ final class LegacyHsmReaderAdapter implements LegacyHsmReader, ReaderSpi {
   }
 
   /**
-   * 
    * Release the current CsmChannel.
    *
    * <p>Since the {@link CsmChannel} is released, this reader is unusable after this method has been
@@ -252,5 +249,15 @@ final class LegacyHsmReaderAdapter implements LegacyHsmReader, ReaderSpi {
   @Override
   public void onUnregister() {
     // NOP
+  }
+
+  /**
+   * {@inheritDoc}
+   *
+   * @since 1.0.1
+   */
+  @Override
+  public Object getSelectedSmartCard() {
+    return null;
   }
 }
